@@ -4,21 +4,34 @@
     <title>Programação Web - IFRO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
+    <meta name="description" content="Site com responsivo com colunas de texto">
+    <meta name="keywords" content="responsivo, colunas, ajustavel">
+    <meta name="author" content="Gabriel de Oliveira Silva">
 
+
+    <style>
       * {
         box-sizing: border-box;
         font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
       }
+
+      body,
+      html {
+        padding: 0;
+      }
+
       header {
         background-color: green;
-        padding: 15px;
+        padding: 30px 15px;
         text-align: center;
       }
+
       #logo {
         width: 280px;
         float: left;
       }
+
       #titulo {
         color: white;
         text-align: center;
@@ -29,25 +42,26 @@
         background-color: #000;
         overflow: hidden;
       }
-      nav a{
+
+      nav a {
         color: white;
         text-decoration: none;
         display: block;
         padding: 15px;
         float: left;
-
       }
-      nav a:hover{
+
+      nav a:hover {
         color: green;
         background-color: white;
-        transition: .2s;
+        transition: 0.2s;
       }
 
       .columnA,
       .columnB,
       .columnC {
         float: left;
-        width: 50%;
+        width: 33%;
         padding: 15px;
         text-align: justify;
       }
@@ -57,12 +71,63 @@
         text-align: center;
       }
 
-      @media screen and (max-width:500px) {
-      .columnA,
-      .columnB,
-      .columnC{
-        width: 100%;
+      body > div {
+        clear: both;
       }
+
+      @media screen and (max-width: 800px) {
+        .columnA,
+        .columnB,
+        .columnC {
+          width: 50%;
+        }
+
+        body > div {
+          overflow: hidden;
+        }
+
+        body > div:last-of-type {
+          margin-bottom: 150px;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .columnA,
+        .columnB,
+        .columnC {
+          width: 100%;
+        }
+      }
+
+      footer {
+        float: left;
+        width: 100%;
+        text-align: center;
+        background-color: darkgray;
+        color: #000;
+        position: fixed;
+        margin-top: 200px;
+
+        bottom: 0;
+      }
+
+      footer a {
+        display: block;
+        float: left;
+        text-align: center;
+        padding: 10px 16px;
+        text-decoration: none;
+        color: white;
+      }
+
+      footer h2 {
+        color: white;
+        font-size: 110%;
+      }
+
+      footer a:hover {
+        background-color: white;
+        color: green;
       }
     </style>
   </head>
@@ -70,40 +135,111 @@
   <body>
     <header>
       <div>
-        <img id="logo" src="img/logo_IFRO_JIPA_branca_horizontal.png" />
+        <img id="logo" src="img/logo_IFRO_JIPA_branca_horizontal.png" alt="logomarca Ifro"/>
       </div>
-      <div><h2 id="titulo">Programação web</h2></div>
+      <div>
+        <h2 id="titulo">Programação web</h2>
+      </div>
     </header>
     <nav>
       <a href="#">Home</a>
       <a href="#">Sobre nós</a>
       <a href="#">Fale Conosco</a>
-    </nav>    
+    </nav>
 
     <div class="row">
-
       <div class="columnA">
         <h2>Coluna A</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero expedita atque consequuntur in possimus? Iusto reprehenderit eaque quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ducimus architecto officia eveniet vero obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime veritatis non corrupti beatae dignissimos expedita aspernatur obcaecati.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero
+          expedita atque consequuntur in possimus? Iusto reprehenderit eaque
+          quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime
+          veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Voluptates ducimus architecto officia eveniet vero
+          obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime
+          veritatis non corrupti beatae dignissimos expedita aspernatur
+          obcaecati.
         </p>
       </div>
-      
+
+      <div class="columnB">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/NfXaINcqPt8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="columnC">
+        <h2>Coluna C</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero
+          expedita atque consequuntur in possimus? Iusto reprehenderit eaque
+          quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime
+          veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Voluptates ducimus architecto officia eveniet vero
+          obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime
+          veritatis non corrupti beatae dignissimos expedita aspernatur
+          obcaecati.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columnA">
+        <h2>Coluna A</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero
+          expedita atque consequuntur in possimus? Iusto reprehenderit eaque
+          quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime
+          veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Voluptates ducimus architecto officia eveniet vero
+          obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime
+          veritatis non corrupti beatae dignissimos expedita aspernatur
+          obcaecati.
+        </p>
+      </div>
+
       <div class="columnB">
         <h2>Coluna B</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero expedita atque consequuntur in possimus? Iusto reprehenderit eaque quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ducimus architecto officia eveniet vero obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime veritatis non corrupti beatae dignissimos expedita aspernatur obcaecati.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero
+          expedita atque consequuntur in possimus? Iusto reprehenderit eaque
+          quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime
+          veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Voluptates ducimus architecto officia eveniet vero
+          obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime
+          veritatis non corrupti beatae dignissimos expedita aspernatur
+          obcaecati.
         </p>
       </div>
 
       <div class="columnC">
         <h2>Coluna C</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero expedita atque consequuntur in possimus? Iusto reprehenderit eaque quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ducimus architecto officia eveniet vero obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime veritatis non corrupti beatae dignissimos expedita aspernatur obcaecati.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero
+          expedita atque consequuntur in possimus? Iusto reprehenderit eaque
+          quidem veritatis corrupti, nobis vel, molestias voluptate fuga maxime
+          veniam harum. Iure? Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Voluptates ducimus architecto officia eveniet vero
+          obcaecati distinctio pariatur expedita enim. Dolor recusandae maxime
+          veritatis non corrupti beatae dignissimos expedita aspernatur
+          obcaecati.
         </p>
       </div>
-
     </div>
 
+    <footer>
+      <h1>Footer</h1>
+      <h2>Endereço Rua Monte Castelo 527 - Ji-Paraná - RO</h2>
+
+      <a href="#">Sobre nós</a>
+      <a href="#">Carreiras</a>
+      <a href="#">Contate-nos</a>
+    </footer>
   </body>
 </html>
