@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriel de Oliveira Silva"/>
+    <meta name="descriprtion" content="Dormulário de opinião"/>
+    <meta name="keywords" content="formularios"/>
+
+    <title>Formulário de avaliação</title>
+</head>
+<body>
+    <form action="processa.php">
+        <fieldset  >
+            <legend>Dados pesoais</legend>
+            <p>
+                <label for="name">Nome:</label>
+                <input type="text" name="nomeCompleto" id="nome" />
+            </p>
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" id="email" />
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Formulário de opinião</legend>
+            <strong>O que você achou do site?</strong>
+            <dl>
+                <dd>
+                    <input type="radio" name="avaliacao" value="muitobom" checked>Muito bom
+                    <input type="radio" name="avaliacao" value="bom" checked>Bom
+                    <input type="radio" name="avaliacao" value="regular" checked>Regular
+                    <input type="radio" name="avaliacao" value="umlixo" checked>Um Lixo
+
+                </dd>
+            </dl>
+
+            <strong>Qual seção voce mais gostou <br /></strong>
+            <p>
+                <dl>
+                    <dd>
+                        <select name="secao" id="secao" size="1">
+                            <option value="emCartaz">Em Cartaz</option>
+                            <option value="trilhasonora">Trilha sonora</option>
+                            <option value="galeriadefotos">Galeria de fotos</option>
+                            <option value="bilheteria">Bilheteria</option>
+                            <option value="outra">Outra</option>
+                        </select>
+                    </dd>
+                </dl>
+            </p>
+            <p>
+                <strong>Digite seus comentários no campo abaixo:</strong>
+                <dl>
+                    <dd>
+                        <textarea name="comentarios" id="comentarios" cols="42" rows="5">
+
+
+                        </textarea>
+
+                    </dd>
+                </dl>
+
+            </p>
+            <p>
+                <dl>
+                    <dd>
+                        <input type="checkbox" name="recebernovidades" id="recebernovidades">Quero receber novidades por email
+
+                    </dd>
+                </dl>
+            </p>
+            <p>
+                <dl>
+                    <dd>
+                        <input type="submit" name="enviar" id="enviar" value="Enviar dados">
+                        <input type="reset" name="apagar" id="apagar" value="Limpar Formulário">
+                    </dd>
+                </dl>
+            </p>            
+            
+        </fieldset>
+    </form>
+
+
+    
+</body>
+</html>
