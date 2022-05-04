@@ -5,12 +5,12 @@
     box-sizing: border-box;
 }
 :root{
-    --corBackground: #BB7E8C;
-    --colorFont: #402A2C;
+    --cor0: #BB8A89;
+    --color1: #0D160B;
 }
 body {
-    max-height: 100vh;
-    background-color: var(--corBackground);
+    min-height: 100vh;
+    background-color: var(--cor0);
     color: var(--colorFont);
     overflow: hidden;
 }
@@ -27,7 +27,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    flex-wrap: wrap;
 
 }
 main h1{
@@ -36,6 +36,7 @@ main h1{
 
 main p  {
     font-size: 2em;
+    max-width: 600px;
 }
 
 
@@ -53,12 +54,12 @@ button {
     border: none;
     padding: 30px 10px;
     border-radius: 5px;
-    background-color: var(--colorFont);
-    color: darkgray;
+    background-color: var(--color1);
+    color: var(--cor0   );
     transition: all;
 }
 button:hover {
-    background-color: var(--colorFont);
+    background-color: var(--color1);
     opacity: 90%;
     color: white;
     cursor: pointer;

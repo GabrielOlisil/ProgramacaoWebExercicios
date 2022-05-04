@@ -5,13 +5,13 @@
     box-sizing: border-box;
 }
 :root{
-    --cor0: #BB7E8C;
-    --color1: #402A2C;
+    --cor0: #EFF7F6;
+    --color1: #7BDFF2;
 }
 body {
     min-height: 100vh;
     background-color: var(--cor0);
-    color: var(--color1);
+    color: var(--colorFont);
     overflow: hidden;
 }
 body {
@@ -27,7 +27,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    flex-wrap: wrap;
 
 }
 main h1{
@@ -55,7 +55,7 @@ button {
     padding: 30px 10px;
     border-radius: 5px;
     background-color: var(--color1);
-    color: var(--cor0);
+    color: var(--cor0   );
     transition: all;
 }
 button:hover {

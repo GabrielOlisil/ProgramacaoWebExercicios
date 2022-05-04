@@ -19,12 +19,12 @@ function EscolhaNumero() {
     
     
     if (numero1 == ""){
-        numero1 == 0;
+        numero1 = 0;
     }
     
         
     if (numero2 == ""){
-        numero2 == 0;
+        numero2 = 0;
     }
     
     resposta = parseInt(numero1) + parseInt(numero2);

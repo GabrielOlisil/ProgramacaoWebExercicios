@@ -1,5 +1,0 @@
-
-function Teste(){
-
-    alert("AAAAA");
-}
