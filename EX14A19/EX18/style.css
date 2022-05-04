@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 :root{
-    --cor0: #BACDB0;
-    --color1: #729B79;
+    --cor0: #F7A9A8;
+    --color1: #eb687c;
 }
 body {
     min-height: 100vh;
