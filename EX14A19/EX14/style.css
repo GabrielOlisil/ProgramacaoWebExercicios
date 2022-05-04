@@ -9,7 +9,7 @@
     --colorFont: #402A2C;
 }
 body {
-    max-height: 100vh;
+    min-height: 100vh;
     background-color: var(--corBackground);
     color: var(--colorFont);
     overflow: hidden;
@@ -36,6 +36,7 @@ main h1{
 
 main p  {
     font-size: 2em;
+    max-width: 600px;
 }
 
 
