@@ -1,5 +1,5 @@
 function Comeco(){
-    resposta = confirm("Deseja definir os valores ou ver a soma do sistema?");
+    resposta = confirm("Deseja definir os valores ou ver a média do sistema?");
     if(resposta){
         nota1 = parseInt(prompt("Insira a Primeira nota"));
         nota2 = parseInt(prompt("Insira a Segunda nota"));

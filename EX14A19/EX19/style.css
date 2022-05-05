@@ -6,7 +6,7 @@
 }
 :root{
     --cor0: #E8F0FF;
-    --color1: #392759;
+    --color1: #392759 ;
 }
 body {
     min-height: 100vh;
@@ -17,6 +17,7 @@ body {
 body {
     box-shadow: inset 0px 0px 70px #00000089;
     padding: 20px;
+    
 }
 
 main {

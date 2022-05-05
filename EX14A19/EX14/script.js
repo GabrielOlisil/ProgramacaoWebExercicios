@@ -1,16 +1,20 @@
 function Comeco(){
-    resposta = confirm("Voce deseja passar os numeros por parametro ou ver a soma prá-definida pelo sistema?");
+    resposta = confirm("Você deseja passar os numeros por parâmetro ou ver a soma pré-definida pelo sistema?");
     if(resposta){
-        EscolhaNumero();
+        resultado = EscolhaNumero();
     }
-    else
-    NumerosPredefinidos(30, 40);
+    else{
+
+        resultado = NumerosPredefinidos(30, 40);
+    }
+
+    alert(resultado)
 }
 
 
 function NumerosPredefinidos(numero1, numero2){
     var resultado = numero1 + numero2;
-    alert(resultado);
+    return resultado
 }
 
 function EscolhaNumero() {
@@ -28,5 +32,6 @@ function EscolhaNumero() {
     }
     
     resposta = parseInt(numero1) + parseInt(numero2);
-    alert(resposta);   
+    return resposta
+
 }
