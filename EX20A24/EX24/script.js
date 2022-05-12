@@ -1,5 +1,4 @@
-function valida(){
-    if(document.formulario.busca.value == ""){
-        
-    }
+function mostrarFrete(){
+    var frete = document.formulario.rfrete.value;
+    alert(frete);
 }
