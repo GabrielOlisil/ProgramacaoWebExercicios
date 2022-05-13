@@ -25,12 +25,12 @@
             grid-template-columns: calc(4, 1fr);
             grid-template-rows: calc(6, 1fr);
             background-color: rgba(0, 0, 0, 0.918);
-            max-width: 350px;
+            max-width: 300px;
             margin: auto;
             padding: 20px;
             gap: 5px;
             min-height: 400px;
-            border-radius: 5px;
+            border-radius: 10px;
         }
         .container div{
             display: flex;
@@ -43,6 +43,7 @@
         .container div:hover {
             background-color: darkgray;
             color: black;
+            cursor: pointer;
         }
         #visor {
             grid-column: 1/5;
@@ -51,7 +52,8 @@
             color: black;
             justify-content: flex-end;
             padding: 5px;
-            overflow-x: scroll;
+            display: flex;
+            flex-wrap: wrap;
         }
         #zero {
             grid-column: 1/3;
@@ -59,6 +61,9 @@
         #igual {
             grid-column: 4/5;
             grid-row: 5/7;
+        }
+        #destaque {
+            background-color: #3d443b;
         }
     </style>
     
@@ -68,8 +73,8 @@
     <div class="container">
         <div id="visor"></div>
         <div onclick="limpar()">C</div>
-        <div onclick="inserirNumeros('*')">X</div>
-        <div onclick="inserirNumeros('/')">/</div>
+        <div onclick="inserirNumeros('x')">X</div>
+        <div onclick="inserirNumeros('÷')">÷</div>
         <div onclick="backspace()">&lt</div>
         <div onclick="inserirNumeros(7)">7</div>
         <div onclick="inserirNumeros(8)">8</div>
@@ -84,14 +89,27 @@
         <div onclick="inserirNumeros(3)">3</div>
         <div id="igual" onclick="resultado()">=</div>
         <div id="zero" onclick="inserirNumeros(0)">0</div>
-        <div onclick="inserirNumeros(7)">.</div>
+        <div onclick="inserirNumeros('.')">.</div>
     </div>
 
     <script>
         var visor = document.querySelector("#visor");
+        var exibindoResultado = false;
 
         function inserirNumeros(numero){
+            
+            if ((numero === 'x' || numero === '/' || numero === '+' || numero === '-') && (exibindoResultado == true)){
+                exibindoResultado = false;
+            }
+
+            if(exibindoResultado == true){
+                limpar()
+                exibindoResultado = false;
+            }
+            
             visor.innerHTML = visor.innerHTML + numero;
+            
+            
 
         }
 
@@ -103,7 +121,12 @@
             visor.innerHTML = visor.innerHTML.substring(0, visor.innerHTML.length -1);
         }
         function resultado() {
-            visor.innerHTML = eval(visor.innerHTML);
+            if(visor.innerHTML.length > 1){
+                visor.innerHTML = eval(visor.innerHTML.replace('x', '*').replace('÷', '/'));
+                exibindoResultado = true;
+
+            }
+            
         }
     </script>
     
