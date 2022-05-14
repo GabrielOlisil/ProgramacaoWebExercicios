@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nomes {
+            min-height: 40px;
+            max-width: 200px;
+        }
+        .container {
+            box-sizing: border-box;
+            display: flex;   
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        button {
+            outline: none;
+            color: white;
+            background-color: black;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div id="nomes">
+            Aqui será gerado seu nome
+        </div>
+        <button onclick="gerarNomes()">Gerar</button>
+    </div>
+
+    <script>
+        var nomeA = ['Gabriel', 'Olga', 'Patrick', 'Samuel', 'Eloizy', 'Maria', 'Evellyn', 'Windson', 'Deizi', 'Neto', 'Julia', "João", 'Nilson'];
+    
+        var sobrenome = ['Silva', 'Correia', 'Ramalho', 'Oliveira', 'Motta', 'Filho', 'Gambaro', 'Santana', 'Teixeira', 'Andrade', 'Abreu', 'Almeida', 'Alves'];
+    
+        function gerarNumeros() {
+            return Math.floor(Math.random() * (12 - 0 + 1) + 0);
+        }
+    
+        function gerarNomes() {
+            
+            
+            nomesGerados = "";
+            display = document.querySelector('#nomes');
+            
+            for (i = 0; i < 1; i++ ){
+                iNome = gerarNumeros();
+                qtdSobrenomes = gerarNumeros() % 2;
+
+                if (qtdSobrenomes === 1){
+                    segundoNome = gerarNumeros();
+                    terceiroNome = gerarNumeros()
+                    if (segundoNome == terceiroNome){
+                        if (terceiroNome > 8){
+                            terceiroNome--
+                        } else {
+                            terceiroNome++
+                        }
+                    }
+
+                    iSobrenome = sobrenome[segundoNome] + " " + sobrenome[terceiroNome];
+                } else {
+                    segundoNome = gerarNumeros();
+                    iSobrenome = sobrenome[segundoNome];
+                }
+                
+                nomeGerado = nomeA[iNome] + " " + iSobrenome;
+                nomesGerados += nomeGerado + "<br />"
+            }
+            display.innerHTML = nomesGerados;
+        }
+    </script>
+
+</body>
+
+</html>

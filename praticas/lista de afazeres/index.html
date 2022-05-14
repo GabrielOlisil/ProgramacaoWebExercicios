@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "i l";
+        }
+        #insert {
+            grid-area: i;
+            border-right: 2px solid black;
+        }
+        #insert form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        #list {
+            grid-area: l;
+        }
+        #list main {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="insert">
+        <form name="formInsert">
+            <h1>Inserir na lista</h1>
+            <input type="text" name="item" id="item" >
+            <input type="button" value="Inserir" onclick="adicionar()" >
+        </form>
+    </div>
+
+
+    <div id="list">
+        <main>
+            <h1>Lista de afazeres</h1>
+
+            <ul id="listaAfazeres">
+
+            </ul>
+        </main>
+    </div>
+
+    <script>
+        var lista = document.querySelector('#listaAfazeres');
+        function adicionar(){
+            item = document.formInsert.item.value;
+            if (item != ''){
+                lista.innerHTML += "<li>" + item + "</li>";
+                clear();
+            }
+        }
+
+        function clear(){
+            document.formInsert.item.value = '';
+            
+        }
+    </script>
+</body>
+
+</html>
