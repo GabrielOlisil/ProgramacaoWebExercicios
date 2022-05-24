@@ -15,6 +15,7 @@
             max-width: 1200px;
             margin: auto;
             padding: 40px;
+            margin-top: 30px;
 
         }
 
@@ -53,6 +54,7 @@
             display: flex;
             align-items: center;    
             justify-content: center;
+            gap: 20px;
 
         }
         .col4{
@@ -80,6 +82,12 @@
 </head>
 
 <body>
+
+    <div class="flex-center" >
+        <input type="text" class="cep" >
+        <input type="text" class="cep">
+        <input type="button" id="btnFrete" value="Calcular Frete">
+    </div>
     <div class="grid">
 
         
@@ -154,7 +162,25 @@
 
 
 
+        <script>
+            
+        
+            
+            const btnCalc = document.getElementById('btnFrete');
+            btnCalc.addEventListener('click', valida)
+            
+            function valida(){
+                let cep1 = document.getElementsByClassName("cep")[0].value
+                
+                cep1 = Number(cep1)
+                
+                console.log(cep1)
+                if(cep1 ){
+                    alert("Insere o cep direito")
+                }
 
+            }
+        </script>
 
     </div>
 </body>
