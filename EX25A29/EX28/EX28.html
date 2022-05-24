@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 100px repeat(2, 1fr) repeat(3, 40px);
+            background-color: aliceblue;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+
+        }
+
+        /* .column1-item {
+            grid-column: 1;
+        }
+        .column2-item {
+            grid-column: 2;
+            grid-row: auto
+        } */
+
+        .grid div {
+            text-align: center
+        }
+        .title {
+            margin: 0;
+            font-weight: bold;
+        }
+
+
+        .img {
+            width: 100px;
+            height: 100%;
+            margin: 0;
+            float: left;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+        }
+        .img img {
+            
+            width: 100px;
+        }
+
+        .flex-center{
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+
+        }
+        .col4{
+            grid-column: 4;
+            grid-column: span;
+        }
+
+        .col5{
+            grid-column: 5;
+            
+
+        }
+
+        .r4 {
+            grid-row: 4
+        }
+        .r5{
+            grid-row: 5
+        }
+
+        .r6 {
+            grid-row: 6
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+
+        
+        <div class="title">Produto</div>
+        <div class="title">Quantidade</div>
+
+        <div class="title">
+            Entrega
+        </div>
+        
+        
+        <div class="title">
+            Valor Unitário
+        </div>
+        <div class="title">
+            Valor Total
+        </div>
+
+
+
+        <div> <div class="img"><img src="roteador.png" alt=""></div>
+            <p class="title">Roteador</p>
+            <p> Wireless Router N 150Mbps</p>
+        </div>
+
+        <div class="flex-center"><input type="text" name="quantidade"></div>
+
+        <div class="flex-center">
+            Informe o CEP
+        </div>
+
+        <div class="valUnit flex-center">
+            20000
+        </div>
+
+        <div class="valTot flex-center">
+            20000
+        </div>
+
+        <div><div class="img"><img src="notebook.png" alt=""></div>
+            <p class="title">Notebook</p>
+            <p>Intel Core I5 6GB 1TB LED 14" Touchscreen Windows 8</p>
+        </div>
+
+
+        <div class="flex-center"><input type="text" name="quantidade"></div>
+
+        <div class="flex-center">
+            Informe o CEP
+        </div>
+
+        <div class="valUnit flex-center">
+            20000
+        </div>
+
+        <div class="valTot flex-center">
+            20000
+        </div>
+        
+
+        <div class="col4">Subtotal</div>
+        <div class="col4">Frete</div>
+        <div class="col4">Total</div>
+
+
+
+        <div class="col5 r4">1232</div>
+        <div class="col5 r5">00,00</div>
+        <div class="col5 r6">123</div>
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
