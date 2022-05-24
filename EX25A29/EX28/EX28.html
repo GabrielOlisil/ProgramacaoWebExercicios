@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrinho de frete</title>
     <style>
         .grid {
             display: grid;
@@ -84,8 +84,9 @@
 <body>
 
     <div class="flex-center" >
-        <input type="text" class="cep" >
-        <input type="text" class="cep">
+        <h1>Insira o cep</h1>
+        <input type="text" class="cep" maxlength="5"> <span>-</span>
+        <input type="text" class="cep" maxlength="3">
         <input type="button" id="btnFrete" value="Calcular Frete">
     </div>
     <div class="grid">
@@ -113,7 +114,7 @@
             <p> Wireless Router N 150Mbps</p>
         </div>
 
-        <div class="flex-center"><input type="text" name="quantidade"></div>
+        <div class="flex-center"><input type="text" name="quantidade" class="qtd"></div>
 
         <div class="flex-center">
             Informe o CEP
@@ -133,7 +134,7 @@
         </div>
 
 
-        <div class="flex-center"><input type="text" name="quantidade"></div>
+        <div class="flex-center"><input type="text" name="quantidade" class="qtd"></div>
 
         <div class="flex-center">
             Informe o CEP
@@ -163,36 +164,50 @@
 
 
         <script>
-            
             (function(){
 
-
+                
                 
                 const btnCalc = document.getElementById('btnFrete');
-                btnCalc.addEventListener('click', valida)
+                btnCalc.addEventListener('click', validaNumero)
+
+
+
+                let qtd1 = document.getElementsByClassName("qtd")[0]
+                let qtd2 = document.getElementsByClassName("qtd")[1]
+
+                qtd1.addEventListener('blur', validaQtd)
+                qtd2.addEventListener('blur', validaQtd)
                 
-                function valida(){
+                
+                function validaQtd(){
+                    if(parseInt(qtd1.value) > 9){
+                        qtd1.value = 9
+                    }
+
+                    if(parseInt(qtd2.value) > 9){
+                        qtd2.value = 9
+
+                    }
+                    
+                }
+                
+                function validaNumero(){
                     
                     
-                    cep1 = document.getElementsByClassName("cep")[0]
-                    cep2 = document.getElementsByClassName("cep")[1]
+                    let cep1 = document.getElementsByClassName("cep")[0]
+                    let cep2 = document.getElementsByClassName("cep")[1]
                     
                     
                     if (isNaN(cep1.value) || isNaN(cep2.value)){
                         cep1.value = ''
                         cep2.value = ''
                         cep1.focus()
-                    }
-
-                    
-                    
+                    }                   
                    
-                    
-                    // if(){
-                    //     alert("Insere o cep direito")
-                    // }
-                    
+            
                 }
+
             })()
 
         </script>
