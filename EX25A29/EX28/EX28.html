@@ -164,22 +164,37 @@
 
         <script>
             
-        
-            
-            const btnCalc = document.getElementById('btnFrete');
-            btnCalc.addEventListener('click', valida)
-            
-            function valida(){
-                let cep1 = document.getElementsByClassName("cep")[0].value
-                
-                cep1 = Number(cep1)
-                
-                console.log(cep1)
-                if(cep1 ){
-                    alert("Insere o cep direito")
-                }
+            (function(){
 
-            }
+
+                
+                const btnCalc = document.getElementById('btnFrete');
+                btnCalc.addEventListener('click', valida)
+                
+                function valida(){
+                    
+                    
+                    cep1 = document.getElementsByClassName("cep")[0]
+                    cep2 = document.getElementsByClassName("cep")[1]
+                    
+                    
+                    if (isNaN(cep1.value) || isNaN(cep2.value)){
+                        cep1.value = ''
+                        cep2.value = ''
+                        cep1.focus()
+                    }
+
+                    
+                    
+                   
+                    
+                    // if(){
+                    //     alert("Insere o cep direito")
+                    // }
+                    
+                }
+            })()
+
         </script>
 
     </div>
