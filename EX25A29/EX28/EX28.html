@@ -19,13 +19,7 @@
 
         }
 
-        /* .column1-item {
-            grid-column: 1;
-        }
-        .column2-item {
-            grid-column: 2;
-            grid-row: auto
-        } */
+        
 
         .grid div {
             text-align: center
@@ -176,20 +170,16 @@
                 let qtd1 = document.getElementsByClassName("qtd")[0]
                 let qtd2 = document.getElementsByClassName("qtd")[1]
 
-                qtd1.addEventListener('blur', validaQtd)
-                qtd2.addEventListener('blur', validaQtd)
+                qtd1.addEventListener('blur', () => {
+                    validaQtd(qtd1)
+                })
+                qtd2.addEventListener('blur', () =>{
+                    validaQtd(qtd2)
+                })
                 
                 
-                function validaQtd(){
-                    if(parseInt(qtd1.value) > 9){
-                        qtd1.value = 9
-                    }
-
-                    if(parseInt(qtd2.value) > 9){
-                        qtd2.value = 9
-
-                    }
-                    
+                function validaQtd(qtd){
+                    qtd.value = parseInt(qtd.value) < 9? parseInt(qtd.value) : 9;
                 }
                 
                 function validaNumero(){
