@@ -79,8 +79,8 @@
 
     <div class="flex-center" >
         <h1>Insira o cep</h1>
-        <input type="text" class="cep" maxlength="5"> <span>-</span>
-        <input type="text" class="cep" maxlength="3">
+        <input type="text" class="cep"> <span>-</span>
+        <input type="text" class="cep">
         <input type="button" id="btnFrete" value="Calcular Frete">
     </div>
     <div class="grid">
@@ -169,12 +169,16 @@
                 let inputCep2 = document.getElementsByClassName("cep")[1]
 
                 inputCep1.addEventListener('keyup', () => {
-                    tamanhoMaximo(inputCep1.value, 5)
+                    tamanhoMaximo(inputCep1, 5)
+                })
+                inputCep2.addEventListener('keyup', () => {
+                    tamanhoMaximo(inputCep2, 3)
                 })
 
                 function tamanhoMaximo(cep, tamanho){
-                    if(cep.length >= tamanho){
-                        cep = cep.substring(0, cep.lengh -1)
+                    
+                    if(cep.value.length >= tamanho){
+                        cep.value = cep.value.substring(0, tamanho)
                     }
                 }
 
