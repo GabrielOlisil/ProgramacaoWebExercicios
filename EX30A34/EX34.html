@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function cpf(v) {
+        v.value = v.value.replace(/\D/g, "");
+        v.value = v.value.replace(/(\d{3})(\d)/, "$1.$2");
+        v.value = v.value.replace(/(\d{3})(\d)/, "$1.$2");
+        v.value = v.value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    }
+</script>
+
+<body>
+    <form onsubmit="return cpf(v)">
+        Insira o cpf: <input type="text" name="inputcpf" onkeypress="cpf(this);" onkeyup=" cpf(this);" maxlength="14">
+        <input type="submit" name="botao" value="Enviar">
+    </form>
+</body>
+
+</html>

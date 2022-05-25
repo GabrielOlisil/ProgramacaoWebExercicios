@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cep</title>
+</head>
+
+<body>
+    <form method="post" onsubmit="return camposPreenchidos(this);">
+        CEP: <input type="text" name="inputcep" onkeydown="cep(this);" onkeypress=" cep(this);" onkeyup=" cep(this);" maxlength="9"><br/>
+        <input type="submit" name="botao" value="Enviar">
+    </form>
+
+    <script>
+        function cep(v){
+            v.value = v.value.replace(/\D/g, "");
+            v.value = v.value.replace(/^(\d{5})(\d)/,"$1-$2");
+        }
+        function camposPreenchidos(form){
+            if(form.inputcep.value != "" && form.inputcep.value.length == 9){
+                return true;
+            }
+            return false
+        }
+    </script>
+</body>
+</html>

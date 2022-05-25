@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<script>
+    function data(v){
+    v.value=v.value.replace(/\D/g,"");
+    v.value=v.value.replace(/^(\d{2})(\d)/,"$1/$2");
+    v.value=v.value.replace(/(\d{2})(\d)/,"$1/$2");
+}
+</script>
+<body>
+    <form onsubmit="return data(this)">
+        Insira a data: <input type="text" name="date" onkeypress=" data(this);" onkeyup=" data(this);" maxlength="8">
+        <input type="submit" name="botao" value="Enviar">
+    </form>
+</body>
+</html>
