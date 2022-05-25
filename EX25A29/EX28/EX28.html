@@ -165,10 +165,24 @@
                 const btnCalc = document.getElementById('btnFrete');
                 btnCalc.addEventListener('click', validaNumero)
 
+                let inputCep1 = document.getElementsByClassName("cep")[0]
+                let inputCep2 = document.getElementsByClassName("cep")[1]
+
+                inputCep1.addEventListener('keyup', () => {
+                    tamanhoMaximo(inputCep1.value, 5)
+                })
+
+                function tamanhoMaximo(cep, tamanho){
+                    if(cep.length >= tamanho){
+                        cep = cep.substring(0, cep.lengh -1)
+                    }
+                }
 
 
                 let qtd1 = document.getElementsByClassName("qtd")[0]
                 let qtd2 = document.getElementsByClassName("qtd")[1]
+
+                
 
                 qtd1.addEventListener('blur', () => {
                     validaQtd(qtd1)
