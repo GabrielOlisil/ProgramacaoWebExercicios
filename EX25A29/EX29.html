@@ -92,9 +92,7 @@
         <input type="password"  id="senha">
 
         
-        <span id="verifica-senha">
-            asd
-        </span>
+        <span id="verifica-senha"></span>
         
         <input type="submit" id="submit" value="Acessar">
         
@@ -105,6 +103,7 @@
         const senhaForteReGex = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/;
         const inputSenha = document.getElementById('senha');
 
+     
 
         const inputName = document.getElementById('name');
 
@@ -112,16 +111,26 @@
         const inputEmail = document.getElementById('email');
 
         const verificaSenha = document.getElementById('verifica-senha')
+
+        verificaSenha.textContent = ''
         
         const validaNome = () =>{
             if (inputSenha.value.match(senhaReGex)){
-                verificaSenha.textContent = inputSenha.value.match(senhaForteReGex)? 'Senha forte!!' : 'insira uma senha maior'
-                return   
-            }
+                verificaSenha.textContent = inputSenha.value.match(senhaForteReGex)? 'Senha forte!!' : 'insira uma senha forte'
+                
+            }else{
 
+                verificaSenha.textContent = (inputSenha.value.length == 0)? '' : 'insira uma senha forte'
+
+            }
+            
             
 
+
+
         }
+
+        inputSenha.addEventListener('keyup', validaNome)
 
         const validaTudo = function(){
             if (!inputSenha.value.match(senhaReGex)){
