@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            
+        }
+        body {
+            background-color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        #formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 400px ;
+            margin: auto;
+            color: tomato;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 5px 15px #00000030;
+
+        }
+
+        #submit {
+            
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: tomato;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        #submit:hover {
+            background-color: #ffe6e2;
+            color: tomato;
+        }
+
+        input[type=text], input[type=password] {
+            border: tomato solid 1px;
+            border-radius: 10px;
+            min-height: 30px;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #fae7e4;
+            border: tomato solid 1px;
+            outline: none;
+        }
+
+        #verifica-senha {
+            font-size: 1rem;
+            color: black;
+            font-weight: normal;
+            text-align: right;
+            font-style: italic;
+
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+
+        <h1>Fale conosco</h1>
+        <label for="name">Insira seu nome</label>
+        <input type="text"  id="name" autocomplete="off">
+
+        <label for="email">Insira seu email</label>
+        <input type="text"  id="email"  autocomplete="off">
+
+        <label for="senha">Insira sua senha</label>
+        <input type="password"  id="senha">
+
+        
+        <span id="verifica-senha">
+            asd
+        </span>
+        
+        <input type="submit" id="submit" value="Acessar">
+        
+    </form>
+
+    <script>
+        const senhaReGex = /[a-zA-Z0-9]{6,10}/;
+        const senhaForteReGex = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/;
+        const inputSenha = document.getElementById('senha');
+
+
+        const inputName = document.getElementById('name');
+
+        const emailReGex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const inputEmail = document.getElementById('email');
+
+        const verificaSenha = document.getElementById('verifica-senha')
+        
+        const validaNome = () =>{
+            if (inputSenha.value.match(senhaReGex)){
+                verificaSenha.textContent = inputSenha.value.match(senhaForteReGex)? 'Senha forte!!' : 'insira uma senha maior'
+                return   
+            }
+
+            
+
+        }
+
+        const validaTudo = function(){
+            if (!inputSenha.value.match(senhaReGex)){
+                alert('errado')
+                return false
+            }
+
+
+
+            
+            alert('certo')
+            return true
+        }
+
+
+        const form = document.getElementById('formulario');
+        form.addEventListener('submit', () => { validaTudo()})
+
+        
+
+        console.log(inputName, inputEmail, inputSubmit, inputSenha)
+
+    </script>
+</body>
+</html>
