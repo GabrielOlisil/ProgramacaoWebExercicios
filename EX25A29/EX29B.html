@@ -83,9 +83,9 @@
         
         <div class="flex-center">
             <label for="cartao">Escolha seu cartão</label>
+            <label for="americanExpress"><input type="radio" name="conta" id="americanExpress" value="americanExpress" checked> American Express</label>
             <label for="visa"><input type="radio" name="conta" id="visa" value="visa" > Visa</label>
             <label for="mastercard"><input type="radio" name="conta" id="mastercard" value="mastercard"> MasterCard</label>
-            <label for="americanExpress"><input type="radio" name="conta" id="americanExpress" value="americanExpress" checked> American Express</label>
         </div>
 
         <label for="email">Insira o numero do cartão</label>
@@ -94,7 +94,7 @@
         
         <span id="verifica-senha"></span>
         
-        <input type="button" id="submit" value="Realizar compra" onclick="aaa();">
+        <input type="button" id="submit" value="Realizar compra" onclick="validarCartao();">
 
         
     </form>
@@ -103,7 +103,7 @@
         function caixaAlta(a){
             a.value = a.value.toUpperCase()
         }
-        function aaa(){
+        function validarCartao(){
             let cartao = document.getElementById('cartao')
 
             let inputRd = document.getElementsByName('conta');
@@ -118,28 +118,33 @@
             switch (conta){
                 case 'visa':
                     contaRegExp = /^4[0-9]{12,15}$/
-                    if (!cartao.textContent.match(contaRegExp)){
+                    if (!cartao.value.match(contaRegExp)){
                         alert('Cartao inválido')
 
                         return false
                     }
+                    alert('cartao válido')
+
                     return true
                     break;
                 case 'mastercard':
                     contaRegExp = /^5[1-5]{1}[0-9]{14}$/
-                    if (!cartao.textContent.match(contaRegExp)){
+                    if (!cartao.value.match(contaRegExp)){
                         alert('Cartao inválido')
 
                         return false
                     }
+                    alert('cartao válido')
+
                     return true
                     break;
                 default:
                     contaRegExp = /^3(4|7){1}[0-9]{13}$/
-                    if (!cartao.textContent.match(contaRegExp)){
+                    if (!cartao.value.match(contaRegExp)){
                         alert('Cartao inválido')
                         return false
                     }
+                    alert('cartao válido')
                     return true
                     break;
 
