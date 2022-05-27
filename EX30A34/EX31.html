@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +7,14 @@
     <title>Números</title>
 </head>
 <script>
-    function numeros(v){
-    v.value=v.value.replace(/\D/g,"");
+    function numeros(inputNumero){
+    inputNumero.value = inputNumero.value.replace(/\D/g,"");
 }
 </script>
 <body>
     <form onsubmit="return numeros(v)">
-        Insira o Numero: <input type="text" name="numero"
-        onkeypress=" numeros(this);" onkeyup=" numeros(this);">
+        <p>Insira o Numero: </p>
+        <input type="text" onkeypress=" numeros(this);" onkeyup=" numeros(this);">
         <input type="submit" name="botao" value="Enviar">
     </form>
 </body>

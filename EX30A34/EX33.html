@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8" />
@@ -8,17 +8,17 @@
     <title>Telefone</title>
 </head>
 <script>
-    function telefone(v) {
-        v.value = v.value.replace(/\D/g, "");
-        v.value = v.value.replace(/^(\d\d)(\d)/g, "($1)$2");
-        v.value = v.value.replace(/(\d{4})(\d)/, "$1-$2");
+    function telefone(inputTelefone) {
+        inputTelefone.value = inputTelefone.value.replace(/\D/g, "");
+        inputTelefone.value = inputTelefone.value.replace(/^(\d\d)(\d)/g, "($1)$2");
+        inputTelefone.value = inputTelefone.value.replace(/(\d{4})(\d)/, "$1-$2");
     }
 </script>
 
 <body>
-    <form onsubmit="return telefone(v)">
-        Insira o telefone:
-        <input type="text" name="tele" onkeypress=" telefone(this);" onkeyup="telefone(this);" maxlength="14" />
+    <form onsubmit="return telefone()">
+        <p>Insira o telefone:</p>
+        <input type="text" onkeypress=" telefone(this);" onkeyup="telefone(this);" maxlength="14" />
         <input type="submit" name="botao" value="Enviar" />
     </form>
 </body>

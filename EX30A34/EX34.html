@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,17 +8,17 @@
     <title>Document</title>
 </head>
 <script>
-    function cpf(v) {
-        v.value = v.value.replace(/\D/g, "");
-        v.value = v.value.replace(/(\d{3})(\d)/, "$1.$2");
-        v.value = v.value.replace(/(\d{3})(\d)/, "$1.$2");
-        v.value = v.value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    function cpf(inputCpf) {
+        inputCpf.value = inputCpf.value.replace(/\D/g, "");
+        inputCpf.value = inputCpf.value.replace(/(\d{3})(\d)/, "$1.$2");
+        inputCpf.value = inputCpf.value.replace(/(\d{3})(\d)/, "$1.$2");
+        inputCpf.value = inputCpf.value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     }
 </script>
 
 <body>
-    <form onsubmit="return cpf(v)">
-        Insira o cpf: <input type="text" name="inputcpf" onkeypress="cpf(this);" onkeyup=" cpf(this);" maxlength="14">
+    <form onsubmit="return cpf()">
+        <p>Insira o cpf: </p><input type="text" onkeypress="cpf(this);" onkeyup="cpf(this);" maxlength="14">
         <input type="submit" name="botao" value="Enviar">
     </form>
 </body>

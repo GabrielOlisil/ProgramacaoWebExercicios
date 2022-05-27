@@ -8,15 +8,16 @@
 </head>
 
 <body>
-    <form method="post" onsubmit="return camposPreenchidos(this);">
-        CEP: <input type="text" name="inputcep" onkeydown="cep(this);" onkeypress=" cep(this);" onkeyup=" cep(this);" maxlength="9"><br/>
+    <form onsubmit="return camposPreenchidos(this);">
+        <p>CEP: </p>
+        <input type="text" onkeydown="cep(this);" onkeypress=" cep(this);" onkeyup=" cep(this);" maxlength="9"><br/>
         <input type="submit" name="botao" value="Enviar">
     </form>
 
     <script>
-        function cep(v){
-            v.value = v.value.replace(/\D/g, "");
-            v.value = v.value.replace(/^(\d{5})(\d)/,"$1-$2");
+        function cep(inputCep){
+            inputCep.value = inputCep.value.replace(/\D/g, "");
+            inputCep.value = inputCep.value.replace(/^(\d{5})(\d)/,"$1-$2");
         }
         function camposPreenchidos(form){
             if(form.inputcep.value != "" && form.inputcep.value.length == 9){
