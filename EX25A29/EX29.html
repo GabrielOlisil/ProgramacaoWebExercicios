@@ -28,7 +28,7 @@
             flex-direction: column;
             gap: 30px;
             max-width: 400px ;
-            margin: auto;
+            margin: 40px auto 0;
             color: tomato;
             border-radius: 20px;
             background-color: #fff;
@@ -81,9 +81,9 @@
 <body>
     <form id="formulario">
 
-        <h1>Fale conosco</h1>
-        <label for="name">Insira seu nome</label>
-        <input type="text"  id="name" autocomplete="off">
+        <h1>Fale Conosco</h1>
+        <label for="name" >Insira seu nome</label>
+        <input type="text"  id="name" autocomplete="off" ">
 
         <label for="email">Insira seu email</label>
         <input type="text"  id="email"  autocomplete="off">
@@ -99,6 +99,7 @@
     </form>
 
     <script>
+
         const senhaReGex = /[a-zA-Z0-9]{6,10}/;
         const senhaForteReGex = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/;
         const inputSenha = document.getElementById('senha');
@@ -112,46 +113,76 @@
 
         const verificaSenha = document.getElementById('verifica-senha')
 
-        verificaSenha.textContent = ''
         
-        const validaNome = () =>{
+        
+
+        inputSenha.addEventListener('keyup', validaSenha)
+
+        function validaSenha(a = ''){
             if (inputSenha.value.match(senhaReGex)){
                 verificaSenha.textContent = inputSenha.value.match(senhaForteReGex)? 'Senha forte!!' : 'insira uma senha forte'
                 
-            }else{
+            } else {
 
                 verificaSenha.textContent = (inputSenha.value.length == 0)? '' : 'insira uma senha forte'
 
+            }  
+
+            if(a == 1){
+
+                let validacao =  verificaSenha.textContent == 'Senha forte!!'? true : false;
+                
+                if(!validacao){
+                    alert('Insira uma senha forte')
+                }
+                return validacao;
             }
-            
-            
-
-
-
         }
 
-        inputSenha.addEventListener('keyup', validaNome)
 
-        const validaTudo = function(){
-            if (!inputSenha.value.match(senhaReGex)){
-                alert('errado')
+
+        function validaNome() {
+            let arrayNomes = inputName.value.split(' ')
+
+
+            if (arrayNomes.length < 2){
+                inputName.focus();
+                alert("Insira apenas um nome composto")
                 return false
+                
             }
 
+            for (let i = 0; i < arrayNomes.length; i++){
+                console.log(arrayNomes[i].length)
 
-
-            
-            alert('certo')
+                if (arrayNomes[i].length < 2){
+                    alert('Insira nomes com mais de 2 letras')
+                    return false                    
+                }
+                
+            }
             return true
         }
 
 
+        function validaEmail(){
+            let validacao = inputEmail.value.match(emailReGex)? true: false
+
+            if(!validacao) {
+                alert("Insira o email corretamente")
+                return false
+            }
+            return true
+        }
+
         const form = document.getElementById('formulario');
-        form.addEventListener('submit', () => { validaTudo()})
+        form.addEventListener('submit', () => { 
+            validaNome() && validaEmail() && validaSenha(1);
+            
+        })
 
         
 
-        console.log(inputName, inputEmail, inputSubmit, inputSenha)
 
     </script>
 </body>

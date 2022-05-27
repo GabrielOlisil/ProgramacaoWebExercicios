@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+        * {
+            box-sizing: border-box;
+            
+        }
+        body {
+            background-color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        #formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 400px ;
+            margin: 40px auto 0;
+            color: tomato;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 5px 15px #00000030;
+
+        }
+
+        #submit {
+            
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: tomato;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        #submit:hover {
+            background-color: #ffe6e2;
+            color: tomato;
+        }
+
+        input[type=text], input[type=password] {
+            border: tomato solid 1px;
+            border-radius: 10px;
+            min-height: 30px;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #fae7e4;
+            border: tomato solid 1px;
+            outline: none;
+        }
+
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+
+        <h1>Compra</h1>
+        <label for="name" >Insira seu nome</label>
+        <input type="text"  id="name" autocomplete="off" onkeyup="caixaAlta(this);">
+
+        
+        <div class="flex-center">
+            <label for="cartao">Escolha seu cartão</label>
+            <label for="visa"><input type="radio" name="conta" id="visa" value="visa" > Visa</label>
+            <label for="mastercard"><input type="radio" name="conta" id="mastercard" value="mastercard"> MasterCard</label>
+            <label for="americanExpress"><input type="radio" name="conta" id="americanExpress" value="americanExpress" checked> American Express</label>
+        </div>
+
+        <label for="email">Insira o numero do cartão</label>
+        <input type="text"  id="cartao"  autocomplete="off">
+
+        
+        <span id="verifica-senha"></span>
+        
+        <input type="button" id="submit" value="Realizar compra" onclick="aaa();">
+
+        
+    </form>
+    <script>
+
+        function caixaAlta(a){
+            a.value = a.value.toUpperCase()
+        }
+        function aaa(){
+            let cartao = document.getElementById('cartao')
+
+            let inputRd = document.getElementsByName('conta');
+            let conta = '';
+            let contaRegExp = ''
+            for(let i = 0; i < inputRd.length; i++){
+                if(inputRd[i].checked){
+                    conta = inputRd[i].value
+                }
+            }
+
+            switch (conta){
+                case 'visa':
+                    contaRegExp = /^4[0-9]{12,15}$/
+                    if (!cartao.textContent.match(contaRegExp)){
+                        alert('Cartao inválido')
+
+                        return false
+                    }
+                    return true
+                    break;
+                case 'mastercard':
+                    contaRegExp = /^5[1-5]{1}[0-9]{14}$/
+                    if (!cartao.textContent.match(contaRegExp)){
+                        alert('Cartao inválido')
+
+                        return false
+                    }
+                    return true
+                    break;
+                default:
+                    contaRegExp = /^3(4|7){1}[0-9]{13}$/
+                    if (!cartao.textContent.match(contaRegExp)){
+                        alert('Cartao inválido')
+                        return false
+                    }
+                    return true
+                    break;
+
+            }
+
+        }
+    </script>
+</body>
+</html>
