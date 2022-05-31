@@ -10,15 +10,32 @@
 </head>
 <body>
     <p id="aa"></p>
-    <form action="#" name="form_email" onsubmit="">
-        <label for="email">E-mail</label>
-        <input type="text">
-        <input type="submit"     name="" id="Enviar">
+    <form action="#" name="calculos" onsubmit="somarValores()">
+        <p>
+            <label for="numero1">Numero 1</label>
+            <input type="text" name="numero1" id="numero1" autocomplete="off">
+        </p>
+        <p>
+            <label for="numero2">Numero 2</label>
+            <input type="text" name="numero2" id="numero2" autocomplete="off">
+        </p>
+        <input type="submit" value="Somar" id="button">
     </form>
+    <h2 id="resultado"></h2>
 
     <script type="text/javascript">
-        function show(){
-            let form = document.form['form_email']
+
+
+        function somarValores(){
+            const form = document.forms['calculos']
+
+            const numero1 = parseFloat(form.numero1.value)
+            const numero2 = parseFloat(form.numero2.value)
+
+            let soma = numero1 + numero2
+            document.getElementById('resultado').textContent = soma; 
+
+            return false
         }
     </script>
 </body>
