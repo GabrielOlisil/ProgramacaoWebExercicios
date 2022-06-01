@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body onload="verificarLogado();">
+    <form action="restrita.html" onsubmit="return camposPreenchidos(this);">
+
+    <p>Email: <input name="email" maxlength="100" size="40"></p>
+    <p>Senha: <input type="password" name="senha" maxlength="10" size="10"></p>
+
+    <p>    
+        <input id="checkbox" type="checkbox" name="conectado" value="1">
+        <label for="checkbox">Mantenha-me conectado</label>
+    </p>
+    <input type="submit" name="botao" value="Acessar">
+
+
+
+    <script>
+        function setCookie(nome, valor, expira){
+            dia = new date();
+            dia.setdate(dia.getdate() + expira);
+            var valor = escape(valor) + ((expira == null)? "": "; expires=" + dia.toutcstring());
+            document.cookie = nome + "=" + valor;
+        }
+        
+        function getcookie(nome){
+            var cookies = document.cookie;
+            var inicio = cookies.indexof(" " + nome + "=");
+
+            if (inicio == -1){
+                inicio = cookies.indexof(nome + "=");
+            }
+
+            if (inicio == -1){
+                cookies = null;
+            } else {
+                inicio = cookies.indexOf("=", inicio) + 1;
+                var fim = cookies.indexof(";", inicio);
+    
+                
+                if (fim == -1){
+                    fim = cookies.length;
+                }
+
+                
+                cookies=unescape(cookies.substring(inicio, fim));
+            }
+            return cookies;
+        }
+        
+        
+        function verificarLogado(){
+            if (getCookie("email") != null) {
+                window.location.href = "restrita.html";
+            }
+
+
+            erEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            
+            if(form.email.value == "" || !form.email.value.match(erEmail)){
+                alert("Preencha o campo EMAIL corretamente");
+                return false;}
+                
+            if(form.senha.value!="JavaScript"){
+                alert("Preencha o campo SENHA corretamente");
+                return false;}
+        
+            if(form.conectado.checked){
+                setCookie("email", form.email.value, 10);
+            }
+        
+            return true;
+        }
+        </script>
+</body>
+</html>
