@@ -1,18 +1,24 @@
 @charset "utf-8";
 
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@1,200&display=swap');
-
-
-:root{
-    --fontEnphasis: 'Roboto Mono', monospace;
-    --defaultFont: 'Open Sans', sans-serif;
-    --colorBackground: linear-gradient(90deg, #2a292f 70%, #444249);
-    --colorEnphasis: #3EC9C0;
-    --colorText: #363636;
-    --colorAlternative: #969696;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@1,200&display=swap");
+@font-face {
+    font-family: "Velily Serif";
+    src: url(../fontes/VerilySerifMono.otf);
 }
 
+:root {
+    --fontEnphasis: "Roboto Mono", monospace;
+    --defaultFont: "Open Sans", sans-serif;
+    --fontVariation: "Velily Serif", sans-serif;
+
+    --colorBackground: linear-gradient(90deg, #2a292f 70%, #444249);
+    --colorEnphasis: #3ec9c0;
+    --colorText: #363636;
+    --colorAlternative: #969696;
+    --hoverColor: #b9b5b58f;
+    --contrastColor: #ff4f5a;
+
+}
 
 * {
     margin: 0;
@@ -21,9 +27,11 @@
     color: var(--colorText);
     font-family: var(--defaultFont);
     font-weight: lighter;
-    
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 #navbar {
     display: flex;
@@ -37,32 +45,30 @@
     padding: 20px;
 }
 
+#navbar-titulo {
+    font-family: var(--fontVariation);
+}
 
 #header {
     padding: 20px;
     min-height: calc(100vh - 200px);
     background-image: var(--colorBackground);
     display: flex;
-    
+
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    
 }
 
-
-.header-content{
+.header-content {
     max-width: 550px;
     font-size: 40px;
-    
 }
-
 
 .header-content p {
     color: var(--colorAlternative);
     font-family: var(--fontEnphasis);
 }
-
 
 .principal {
     max-width: 500px;
@@ -70,18 +76,14 @@
     font-size: 60px;
 }
 
-
 .enfase-color {
     color: var(--colorEnphasis);
-
 }
 
-
-.header-imagem{
+.header-imagem {
     width: 550px;
-    
+
     position: relative;
-    
 }
 
 .header-imagem img {
@@ -89,35 +91,67 @@
     border-radius: 10px;
 }
 
-
-
 .navbar-links {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
-
 
 .navbar-links li {
     display: inline-block;
     list-style: none;
 }
 
-
 .navbar-links li a {
     padding: 10px;
     text-decoration: none;
     border-radius: 20px;
     font-weight: 500;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     color: var(--colorAlternative);
 }
 
-
 .navbar-links li a:hover {
-    color: #3EC9C0;
-    background-color: #b9b5b58f;
+    color: var(--colorEnphasis);
+    background-color: var(--hoverColor);
     border-radius: 5px;
+}
+
+
+.social-media {
+    margin: 30px 0 30px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sm-image {
+    width: 50px;
+}
+
+
+#sm-github, #sm-instagram {
+    display: flex;
+    border: var(--colorEnphasis) solid 4px;
+    color: var(--colorEnphasis);
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    text-decoration: none;
+    
+
+}
+
+
+
+
+#sm-github:hover, #sm-instagram:hover{
+        background-color: var(--hoverColor);
 }
 
 
@@ -125,18 +159,34 @@ main {
     padding: 40px;
 }
 
-
 .m-section {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-
-.s-title{
+.s-title {
     text-align: center;
     color: var(--colorText);
     font-size: 70px;
     text-decoration: underline;
     font-weight: bold;
     font-style: italic;
+}
+
+@media screen and (max-width: 1150px) {
+    #header {
+        background-image: url(../imagens/home-office.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: inset 0px 0px 50px 50px  #00000050;
+        overflow: auto;
+    }
+    .header-imagem {
+        display: none;
+    }
+    .header-content {
+        background-color: #000000b9;
+        
+        padding: 140px 20px;
+    }
 }
