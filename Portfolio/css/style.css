@@ -34,6 +34,7 @@ html {
 }
 
 #navbar {
+    
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -43,13 +44,17 @@ html {
     min-height: 50px;
     font-size: 1.2em;
     padding: 20px;
+    border-bottom: white 1px solid;
 }
 
 #navbar-titulo {
     font-family: var(--fontVariation);
+    max-width: 250px;
+    word-break: break-all;
 }
 
 #header {
+    
     padding: 20px;
     min-height: calc(100vh - 200px);
     background-image: var(--colorBackground);
@@ -58,6 +63,7 @@ html {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .header-content {
@@ -157,21 +163,79 @@ html {
 
 main {
     padding: 40px;
+    
 }
 
 .m-section {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
+    
+    
 }
 
 .s-title {
     text-align: center;
     color: var(--colorText);
+    font-family: var(--fontEnphasis);
+    font-weight: lighter;
     font-size: 70px;
     text-decoration: underline;
     font-weight: bold;
     font-style: italic;
+    text-decoration-thickness: 4px;
+    margin: 0 0 60px;
 }
+
+.s-img {
+    height: 500px;
+    max-width: 1600px;
+    margin: 0 0 70px;
+
+}
+.s-img img{
+    object-position: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+    
+    
+}
+
+p {
+    font-family: var(--defaultFont);
+    line-height: 1.8em
+}
+
+.s-paragraph {
+    font-size: 27px;
+}
+
+.grid-two-columns{
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+
+}
+
+.grid-two-columns > div {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.grid-left {
+    border-right: var(--contrastColor) 2px solid;
+  
+
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 1150px) {
     #header {
