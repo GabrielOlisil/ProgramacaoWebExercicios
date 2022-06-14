@@ -243,10 +243,12 @@ p {
     padding: 40px;
 }
 
-.ferramenta-item{
+#ferramentas > div{
     padding: 20px;
-    max-width: 500px;
+    max-width: 1200px;
     margin: 0 auto;
+    border-radius: 10%;
+    padding: 20px;
 }
 
 
@@ -259,10 +261,56 @@ p {
     object-fit: contain;
 }
 
-.ferramenta-item h2 {
+#ferramentas > div h2 {
     text-align: center;
     margin: 40px;
+
 }
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.ferramentas-campo {
+    max-width: 1600px;
+    justify-content: space-between;
+}
+
+.passar-slide {
+    min-height: 300px;
+
+}
+
+.passar-slide:hover  div {
+    background-color: #555454;
+    transition: .2s;
+}
+
+.passar-slide div{
+    width: 100px;
+    height: 5px;
+    background-color: black;
+    margin: 63px 0;
+}
+
+.passar-slide:first-child div:last-child{
+    transform: rotate(45deg);
+}
+
+.passar-slide:first-child div:first-child{
+    transform: rotate(-45deg);
+}
+
+
+.passar-slide:last-child div:last-child{
+    transform: rotate(-45deg);
+}
+
+.passar-slide:last-child div:first-child{
+    transform: rotate(45deg);
+}
+
 
 
 
