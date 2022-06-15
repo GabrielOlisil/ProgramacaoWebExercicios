@@ -18,13 +18,9 @@
         ferramentasItens[counter].remove()
 
         counter--
-        
         counter =  counter >= 0? counter : 3
 
         ferramentas.insertBefore(ferramentasItens[counter], ferramentas.firstChild)
-
-
-
     })
 
 
@@ -33,13 +29,9 @@
         ferramentasItens[counter].remove()
 
         counter++
-        
         counter =  counter < 4? counter : 0
 
         ferramentas.insertBefore(ferramentasItens[counter], ferramentas.firstChild)
-
-
-
     })
 
     

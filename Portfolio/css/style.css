@@ -149,7 +149,7 @@ html {
     justify-content: center;
     gap: 13px;
     text-decoration: none;
-    
+    transition: .3s;
 
 }
 
@@ -165,7 +165,20 @@ main {
     padding: 40px;
     
 }
+#sobre p {
+    font-size: 27px;
+    font-family: var(--defaultFont);
+    
+}
 
+.enfase {
+    font-family: var(--fontEnphasis);
+    font-weight: bold;
+}
+
+section {
+    min-height: 100vh;
+}
 .m-section {
     max-width: 1600px;
     margin: 0 auto;
@@ -173,7 +186,7 @@ main {
     
 }
 
-.s-title {
+section > h1 {
     text-align: center;
     color: var(--colorText);
     font-family: var(--fontEnphasis);
@@ -208,9 +221,7 @@ p {
     line-height: 1.8em
 }
 
-.s-paragraph {
-    font-size: 27px;
-}
+
 
 .grid-two-columns{
     display: grid;
@@ -232,7 +243,7 @@ p {
 
 }
 
-.grid-left  .s-paragraph::before{
+.grid-left  p::before{
     content: "\1F4CC";
 }
 
@@ -280,6 +291,19 @@ p {
     max-width: 1600px;
     justify-content: space-between;
 }
+
+.ferramentas-campo  h2 {
+    font-family: var(--fontEnphasis);
+    font-weight: bold;
+}
+
+.ferramentas-campo > div p {
+    font-family: var(--fontVariation);
+    font-size: 1.2em;
+}
+
+
+
 
 .passar-slide {
     min-height: 300px;
