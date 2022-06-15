@@ -232,6 +232,10 @@ p {
 
 }
 
+.grid-left  .s-paragraph::before{
+    content: "\1F4CC";
+}
+
 
 
 #ferramentas {
@@ -279,11 +283,16 @@ p {
 
 .passar-slide {
     min-height: 300px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 63px;
+    border-radius: 10px;
 }
 
-.passar-slide:hover  div {
-    background-color: #555454;
+.passar-slide:hover {
+    background-color: #bbbaba;
+    cursor: pointer;
     transition: .2s;
 }
 
@@ -291,7 +300,6 @@ p {
     width: 100px;
     height: 5px;
     background-color: black;
-    margin: 63px 0;
 }
 
 .passar-slide:first-child div:last-child{
