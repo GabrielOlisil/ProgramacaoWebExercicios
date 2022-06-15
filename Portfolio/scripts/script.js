@@ -4,7 +4,6 @@
     const ferramentasItens = document.querySelectorAll("#ferramentas-conhecidas > div");
 
     let counter = 0
-    console.log(ferramentasItens.length)
 
     for(let i = 1; i < ferramentasItens.length; i++){
         ferramentasItens[i].remove()
