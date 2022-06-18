@@ -34,7 +34,7 @@
         ferramentas.insertBefore(ferramentasItens[counter], ferramentas.firstChild)
     })
 
-    
+
 
 
 })()

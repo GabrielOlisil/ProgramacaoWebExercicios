@@ -25,7 +25,7 @@
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#ferramentas">Ferramentas</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
 
@@ -117,7 +117,7 @@
                     </div>
 
 
-                    <div id="ferramenta-item2">
+                    <div>
                         <div class="ferramenta-img">
                             <img src="imagens/icons/css.svg" alt="icone-css">
                         </div>
@@ -126,7 +126,7 @@
                             queries entre outros</p>
                     </div>
 
-                    <div id="ferramenta-item3">
+                    <div>
                         <div class="ferramenta-img">
                             <img src="imagens/icons/javascript.svg" alt="icone-javascript">
                         </div>
@@ -135,7 +135,7 @@
                             outros</p>
                     </div>
 
-                    <div id="ferramenta-item4">
+                    <div>
                         <div class="ferramenta-img">
                             <img src="imagens/icons/csharp.svg" alt="icone-csharp">
                         </div>
@@ -160,7 +160,42 @@
             
 
         </section>
+
+        
     </main>
+
+    <footer id="contato">
+        <h1>Entre em Contato</h1>
+        <form name="contato">
+            <div class="form-campos">
+
+                <fieldset>
+                    
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>   
+                    
+                        <label for="texto">Digite sua mensagem:</label>
+                        <textarea name="texto" id="texto"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="buttons">
+                <input type="submit" name="Enviar">
+            </div>
+        </form>
+
+    </footer>
 
     <script type="text/javascript" src="scripts/script.js"></script>
 </body>

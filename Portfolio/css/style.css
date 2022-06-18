@@ -192,7 +192,6 @@ section > h1 {
     font-family: var(--fontEnphasis);
     font-weight: lighter;
     font-size: 70px;
-    text-decoration: underline;
     font-weight: bold;
     font-style: italic;
     text-decoration-thickness: 4px;
@@ -297,9 +296,15 @@ p {
     font-weight: bold;
 }
 
-.ferramentas-campo > div p {
+.ferramentas-campo  p {
     font-family: var(--fontVariation);
     font-size: 1.2em;
+    padding: 5px;
+    text-align: justify;
+}
+
+#ferramentas-conhecidas > div {
+    max-width: 600px;
 }
 
 
@@ -344,8 +349,114 @@ p {
 }
 
 
+#contato {
+    background: #2a292f;
+    min-height: 700px;
+    padding-top:  40px;
+}
+.form-campos {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    flex-wrap: wrap
+}
+
+#contato h1 {
+    text-align: center;
+    color: var(--colorAlternative);
+    font-family: var(--fontEnphasis);
+    font-weight: lighter;
+    font-size: 70px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration-thickness: 4px;
+    margin: 0 0 60px;
+    word-break: break-all;
+
+}
+
+#contato .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+fieldset {
+    border: none;
+    padding: 0 40px;
+
+}
+
+.form-campos fieldset:first-of-type{
+    border-right: var(--colorAlternative) solid 2px;
+    flex-grow: 2;
+    min-width: 400px
+}
+.form-campos fieldset:last-of-type{
+    flex-grow: 3;
+}
 
 
+.form-campos fieldset div {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    
+}
+
+#contato label {
+    color: var(--colorAlternative);
+    font-size: 2em;
+}
+
+
+input[type="text"], input[type="email"]{
+    min-height: 50px;
+    width: 100%;
+    font-size: 1.3em;
+    padding: 5px;
+}
+input:hover{
+    border-color: var(--colorAlternative);
+}
+
+#contato textarea {
+    margin: 20px 0;
+    width: 100%;
+    min-height: 250px;
+    
+    font-size: 1.3em;
+    padding: 5px;
+}
+#contato textarea:hover{
+    border-color: var(--colorAlternative);
+    resize: none;
+}
+
+ input[type="submit"]{
+    border: none;
+    background-color: #b4aaaa;
+    padding: 15px 20px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px #00000046;
+    width: 100%;
+    transition: .3s;
+    font-family: var(--fontVariation);
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    background-color: #635d5d;
+    color: white;
+    cursor: pointer;
+
+}
 
 
 
