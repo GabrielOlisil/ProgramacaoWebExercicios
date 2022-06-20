@@ -1,5 +1,10 @@
 (function(){
 
+
+    const regexEmail = /\S+@\S+\.\S+/
+
+    let emailValido = false
+
     const ferramentas = document.getElementById("ferramentas-conhecidas");
     const ferramentasItens = document.querySelectorAll("#ferramentas-conhecidas > div");
 
@@ -34,6 +39,28 @@
         ferramentas.insertBefore(ferramentasItens[counter], ferramentas.firstChild)
     })
 
+
+
+    const formulario = document.forms["contato"]
+
+    console.log(formulario)
+
+    formulario.addEventListener('submit', () => {
+        
+        if(formulario.nome.value.length > 1  && formulario.texto.value.length > 1 && emailValido){
+
+            return true
+        }
+        alert("Algumas informações foram inseridas incorretamente")
+        return
+
+    })
+
+
+    formulario.email.addEventListener('keyup', () => {
+        emailValido = formulario.email.value.match(regexEmail)? true : false
+       console.log(formulario.email.value)
+    })
 
 
 

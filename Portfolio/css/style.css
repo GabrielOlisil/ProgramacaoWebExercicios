@@ -56,7 +56,7 @@ html {
 #header {
     
     padding: 20px;
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 50px);
     background-image: var(--colorBackground);
     display: flex;
 
@@ -348,10 +348,77 @@ p {
     transform: rotate(45deg);
 }
 
+#hobbies{
+
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+#hobbies p {
+    font-family: var(--fontEnphasis);
+    font-size: 2em;
+    margin: 20px 0 0;
+}
+
+.elementos {
+    margin: 40px 0 120px;
+
+}
+
+.elementos-grid{
+    display: grid;
+    grid-template-rows: calc(2, 1fr);
+    grid-template-columns: 1fr 1.3fr;
+    position: relative;
+    gap: 20px;
+    height: 800px;
+    
+}
+
+
+
+.elementos-grid div {
+    min-height: 100px;
+    grid-column: 2;
+}
+.elementos-grid div:first-child {
+    grid-column: 1;
+    grid-row: 1/3;
+    
+}
+
+.elementos-grid:nth-of-type(2n){
+    grid-template-columns: 1.3fr 1fr;
+    
+}
+
+.elementos-grid:nth-of-type(2n) div {
+    min-height: 100px;
+    grid-column: 1;
+}
+.elementos-grid:nth-of-type(2n) div:first-child {
+    grid-column: 2;
+    grid-row: 1/3;
+    
+}
+
+
+
+.elementos-grid div img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
 
 #contato {
     background: #2a292f;
-    min-height: 700px;
+    min-height: 900px;
     padding-top:  40px;
 }
 .form-campos {
@@ -415,7 +482,7 @@ fieldset {
 }
 
 
-input[type="text"], input[type="email"]{
+input[type="text"]{
     min-height: 50px;
     width: 100%;
     font-size: 1.3em;
@@ -506,5 +573,27 @@ input[type="submit"]:hover{
 
     #ferramentas{
         margin: 0;
+    }
+
+
+    
+    .elementos-grid div {
+        display: none;
+    }
+    .elementos-grid div:first-child {
+        grid-column: 1/3;
+        display: block;
+        max-height: 700px;
+
+
+    }
+    .elementos-grid div:first-child img {
+        object-fit: cover;
+        
+    }
+    .elementos-grid:nth-of-type(2n) div:first-child {
+        grid-column: 1/3;
+       
+        
     }
 }
