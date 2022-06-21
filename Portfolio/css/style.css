@@ -616,7 +616,7 @@ input[type="submit"]:hover{
 
 
 
-@media screen and (max-width: 1150px) {
+@media  (max-width: 1150px) {
 
     main{
         padding: 5px;
@@ -682,4 +682,12 @@ input[type="submit"]:hover{
        
         
     }
+
+    @media (max-width: 700px) {
+        #btnAnterior, #btnProximo {
+            display: none;
+        }
+    }
+
+
 }
