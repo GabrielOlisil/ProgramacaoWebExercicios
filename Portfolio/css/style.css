@@ -462,7 +462,7 @@ p {
 .projeto-img{
     height: 200px;
     margin: 20px 0;
-    background-color: #f8737c;
+    background-color: var(--colorText);
     border-radius: 10px;
 
 }
@@ -480,8 +480,8 @@ p {
     justify-content: center;
 }
 
-.em-breve .projeto-img > p {
-    color: black;
+.projeto-img > p {
+    color: white;
     
     font-family: var(--fontEnphasis);
     font-weight: bold;
