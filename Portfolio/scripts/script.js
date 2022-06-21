@@ -1,4 +1,5 @@
 (function(){
+    let intervalo = 5
 
 
     const regexEmail = /\S+@\S+\.\S+/
@@ -8,7 +9,7 @@
     const ferramentas = document.getElementById("ferramentas-conhecidas");
     const ferramentasItens = document.querySelectorAll("#ferramentas-conhecidas > div");
 
-    let counter = 0
+    let ferramentaEvidente = 0
 
     for(let i = 1; i < ferramentasItens.length; i++){
         ferramentasItens[i].remove()
@@ -20,24 +21,36 @@
 
 
     btnVoltar.addEventListener('click', () => {
-        ferramentasItens[counter].remove()
+        ferramentasItens[ferramentaEvidente].remove()
 
-        counter--
-        counter =  counter >= 0? counter : 3
+        ferramentaEvidente--
+        ferramentaEvidente =  ferramentaEvidente >= 0? ferramentaEvidente : 3
 
-        ferramentas.insertBefore(ferramentasItens[counter], ferramentas.firstChild)
+        ferramentas.insertBefore(ferramentasItens[ferramentaEvidente], ferramentas.firstChild)
+        intervalo = 5
+
     })
 
 
 
     btnPassar.addEventListener('click', () => {
-        ferramentasItens[counter].remove()
-
-        counter++
-        counter =  counter < 4? counter : 0
-
-        ferramentas.insertBefore(ferramentasItens[counter], ferramentas.firstChild)
+        passadaAutomatica();
     })
+
+    function passadaAutomatica(){
+        
+        ferramentasItens[ferramentaEvidente].remove()
+
+        ferramentaEvidente++
+        ferramentaEvidente =  ferramentaEvidente < 4? ferramentaEvidente : 0
+
+        ferramentas.insertBefore(ferramentasItens[ferramentaEvidente], ferramentas.firstChild)
+
+        intervalo = 5
+    }
+
+
+
 
 
 
@@ -61,6 +74,22 @@
         emailValido = formulario.email.value.match(regexEmail)? true : false
        console.log(formulario.email.value)
     })
+
+    function testaIntervalo(){
+        
+        if(intervalo == 0) {
+            passadaAutomatica();
+            
+        }
+
+        intervalo--
+       
+    }
+
+
+
+
+    setInterval(testaIntervalo, 700)
 
 
 
